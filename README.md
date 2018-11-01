@@ -7,7 +7,7 @@
 ## 目录
 1. [类型](#类型)
 2. [引用](#引用)
-3. 对象
+3. [对象](#对象)
 4. 数组
 5. 解构
 6. 字符串
@@ -89,9 +89,9 @@
 
   <a name="2.1"></a>
   <a name="references--prefer-const"></a>
-  - [2.1](#references--prefer-const) 所有引用都使用`const`，避免使用`var`. eslint: [`prefer-const`](http://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](http://eslint.org/docs/rules/no-const-assign.html)
+  - [2.1](#references--prefer-const) 所有引用都使用`const`，避免使用`var`。eslint: [`prefer-const`](http://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](http://eslint.org/docs/rules/no-const-assign.html)
 
-    > Why? 因为这可以确保您无法重新分配引用，重新分配引用可能会导致bug和代码难以理解
+    > Why? 因为这可以确保您无法重新分配引用，重新分配引用可能会导致bug和代码难以理解。
 
     ```javascript
     // bad
@@ -105,9 +105,9 @@
 
   <a name="2.2"></a>
   <a name="references--disallow-var"></a>
-  - [2.2](#references--disallow-var) 如果你一定要重新分配引，那就用`let`，而不是`var`. eslint: [`no-var`](http://eslint.org/docs/rules/no-var.html)
+  - [2.2](#references--disallow-var) 如果你一定要重新分配引，那就用`let`，而不是`var`。 eslint: [`no-var`](http://eslint.org/docs/rules/no-var.html)
 
-    > Why? 因为`let`是块级作用域，而`var`是函数级作用域
+    > Why? 因为`let`是块级作用域，而`var`是函数级作用域。
 
     ```javascript
     // bad
@@ -125,7 +125,7 @@
 
   <a name="2.3"></a>
   <a name="references--block-scope"></a>
-  - [2.3](#references--block-scope) 注意： `let`、`const`都是块级作用域
+  - [2.3](#references--block-scope) 注意： `let`、`const`都是块级作用域。
 
     ```javascript
     // const 和 let 都只存在于它定义的那个块级作用域
@@ -139,11 +139,11 @@
 
 **[⬆ 回到顶部](#目录)**
 
-## Objects
+## 对象
 
   <a name="3.1"></a>
   <a name="objects--no-new"></a>
-  - [3.1](#objects--no-new) 使用字面值创建对象. eslint: [`no-new-object`](http://eslint.org/docs/rules/no-new-object.html)
+  - [3.1](#objects--no-new) 使用字面量语法创建对象。 eslint: [`no-new-object`](http://eslint.org/docs/rules/no-new-object.html)
 
     ```javascript
     // bad
@@ -155,9 +155,9 @@
 
   <a name="3.2"></a>
   <a name="es6-computed-properties"></a>
-  - [3.2](#es6-computed-properties) 当创建一个带有动态属性名的对象时，用计算后属性名
+  - [3.2](#es6-computed-properties) 在创建具有动态属性名称的对象时使用计算属性名称。
 
-    > Why? 这可以使你将定义的所有属性放在对象的一个地方.
+    > Why? 它们允许您在一个位置定义对象的所有属性。
 
     ```javascript
 
@@ -172,7 +172,7 @@
     };
     obj[getKey('enabled')] = true;
 
-    // good getKey('enabled')是动态属性名
+    // good
     const obj = {
       id: 5,
       name: 'San Francisco',
@@ -182,7 +182,7 @@
 
   <a name="3.3"></a>
   <a name="es6-object-shorthand"></a>
-  - [3.3](#es6-object-shorthand) 用对象方法简写. eslint: [`object-shorthand`](http://eslint.org/docs/rules/object-shorthand.html)
+  - [3.3](#es6-object-shorthand) 使用对象方法的简写. eslint: [`object-shorthand`](http://eslint.org/docs/rules/object-shorthand.html)
 
     ```javascript
     // bad
@@ -207,7 +207,7 @@
 
   <a name="3.4"></a>
   <a name="es6-object-concise"></a>
-  - [3.4](#es6-object-concise) 用属性值缩写. eslint: [`object-shorthand`](http://eslint.org/docs/rules/object-shorthand.html)
+  - [3.4](#es6-object-concise) 使用属性值的简写. eslint: [`object-shorthand`](http://eslint.org/docs/rules/object-shorthand.html)
 
     > Why? 这样写的更少且更可读
 
@@ -227,9 +227,9 @@
 
   <a name="3.5"></a>
   <a name="objects--grouped-shorthand"></a>
-  - [3.5](#objects--grouped-shorthand) 将你的所有缩写放在对象声明的开始.
+  - [3.5](#objects--grouped-shorthand) 把简写属性放在对象声明的开头。
 
-    > Why? 这样也是为了更方便的知道有哪些属性用了缩写.
+    > Why? 更容易分辨哪些属性使用了简写。
 
     ```javascript
     const anakinSkywalker = 'Anakin Skywalker';
@@ -258,9 +258,9 @@
 
   <a name="3.6"></a>
   <a name="objects--quoted-props"></a>
-  - [3.6](#objects--quoted-props) 只对那些无效的标示使用引号 `''`. eslint: [`quote-props`](http://eslint.org/docs/rules/quote-props.html)
+  - [3.6](#objects--quoted-props) 仅引用属于无效标识符的属性。 eslint: [`quote-props`](http://eslint.org/docs/rules/quote-props.html)
 
-    > Why? 通常我们认为这种方式主观上易读。他优化了代码高亮，并且页更容易被许多JS引擎压缩。
+    > Why? 通常我们认为这种方式主观上易读。他优化了代码高亮，并且更容易被许多JS引擎优化。
 
     ```javascript
     // bad
@@ -280,7 +280,7 @@
 
   <a name="3.7"></a>
   <a name="objects--prototype-builtins"></a>
-  - [3.7](#objects--prototype-builtins) 不要直接调用`Object.prototype`上的方法，如`hasOwnProperty`, `propertyIsEnumerable`, `isPrototypeOf`。
+  - [3.7](#objects--prototype-builtins) 不要直接调用 `Object.prototype` 的方法，如 `hasOwnProperty` , `propertyIsEnumerable` ,  `isPrototypeOf` 。 eslint: [no-prototype-builtins](https://eslint.org/docs/rules/no-prototype-builtins)
 
     > Why? 在一些有问题的对象上， 这些方法可能会被屏蔽掉 - 如：`{ hasOwnProperty: false }` - 或这是一个空对象`Object.create(null)`
 
@@ -292,7 +292,7 @@
     console.log(Object.prototype.hasOwnProperty.call(object, key));
 
     // best
-    const has = Object.prototype.hasOwnProperty; // 在模块作用内做一次缓存
+    const has = Object.prototype.hasOwnProperty; // 在模块作用域内做一次缓存
     /* or */
     import has from 'has'; // https://www.npmjs.com/package/has
     // ...
@@ -301,8 +301,7 @@
 
   <a name="3.8"></a>
   <a name="objects--rest-spread"></a>
-  - [3.8](#objects--rest-spread) 对象浅拷贝时，更推荐使用扩展运算符[就是`...`运算符]，而不是[`Object.assign`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)。获取对象指定的几个属性时，用对象的rest解构运算符[也是`...`运算符]更好。
-    + 这一段不太好翻译出来， 大家看下面的例子就懂了。^.^
+  - [3.8](#objects--rest-spread) 对象浅拷贝时，优先使用rest扩展运算符[就是`...`运算符]，而不是[`Object.assign`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)。使用rest运算符可以得到省略了某些属性的新对象。
 
   ```javascript
   // very bad
@@ -323,7 +322,7 @@
   const { a, ...noA } = copy; // noA => { b: 2, c: 3 }
   ```
 
-**[⬆ back to top](#目录)**
+**[⬆ 回到顶部](#目录)**
 
 ## Arrays
 
