@@ -280,7 +280,7 @@
 
   <a name="3.7"></a>
   <a name="objects--prototype-builtins"></a>
-  - [3.7](#objects--prototype-builtins) 不要直接调用 `Object.prototype` 的方法，如 `hasOwnProperty` , `propertyIsEnumerable` ,  `isPrototypeOf` 。 eslint: [no-prototype-builtins](https://eslint.org/docs/rules/no-prototype-builtins)
+  - [3.7](#objects--prototype-builtins) 不要直接调用 `Object.prototype` 的方法，如 `hasOwnProperty` , `propertyIsEnumerable` ,  `isPrototypeOf` 。 eslint: [`no-prototype-builtins`](https://eslint.org/docs/rules/no-prototype-builtins)
 
     > Why? 在一些有问题的对象上， 这些方法可能会被屏蔽掉 - 如：`{ hasOwnProperty: false }` - 或这是一个空对象`Object.create(null)`
 
