@@ -2,11 +2,11 @@
 
 # Airbnb JavaScript Style Guide
 
-  **注意**： 这个指南假定你正在使用 [Babel](https://babeljs.io/) ， 并且需要你使用或等效的使用 [babel-preset-airbnb](https://npmjs.com/babel-preset-airbnb) 。 同时假定你在你的应用里安装了带有或等效的 [airbnb-browser-shims](https://npmjs.com/airbnb-browser-shims) 的 shims/polyfills。
+> **注意**： 这个指南假定你正在使用 [Babel](https://babeljs.io/) ， 并且需要你使用或等效的使用 [babel-preset-airbnb](https://npmjs.com/babel-preset-airbnb) 。 同时假定你在你的应用里安装了带有或等效的 [airbnb-browser-shims](https://npmjs.com/airbnb-browser-shims) 的 shims/polyfills。
 
 ## 目录
 1. [类型](#类型)
-2. 参考
+2. [引用](#引用)
 3. 对象
 4. 数组
 5. 解构
@@ -49,7 +49,7 @@
 
   <a name="1.1"></a>
   <a name="types--primitives"></a>
-  - [1.1](#types--primitives) 基本类型: 你可以直接获取到基本类型的值
+  - [1.1](#types--primitives) **基本类型**: 当您访问基本类型时，您可以直接使用其值。
     + `string`
     + `number`
     + `boolean`
@@ -65,11 +65,11 @@
 
     console.log(foo, bar); // => 1, 9
     ```
-    + Symbols 不能被正确的polyfill。 所以在不能原生支持symbol类型的环境[浏览器]中，不应该使用 symbol 类型。
+    + Symbols 不能被正确的 polyfill 。 所以在不能原生支持 symbol 类型的浏览器/环境中，不应该使用 symbol 类型。
 
   <a name="1.2"></a>
   <a name="types--complex"></a>
-  - [1.2](#types--complex)  复杂类型: 复杂类型赋值是获取到他的引用的值。 相当于传引用
+  - [1.2](#types--complex) **复杂类型**: 当您访问复杂类型时，您将处理对其值的引用。
     + `object`
     + `array`
     + `function`
@@ -83,15 +83,15 @@
     console.log(foo[0], bar[0]); // => 9, 9
     ```
 
-**[⬆ back to top](#目录)**
+**[⬆ 回到顶部](#目录)**
 
-## References
+## 引用
 
   <a name="2.1"></a>
   <a name="references--prefer-const"></a>
-  - [2.1](#references--prefer-const) 所有的赋值都用`const`，避免使用`var`. eslint: [`prefer-const`](http://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](http://eslint.org/docs/rules/no-const-assign.html)
+  - [2.1](#references--prefer-const) 所有引用都使用`const`，避免使用`var`. eslint: [`prefer-const`](http://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](http://eslint.org/docs/rules/no-const-assign.html)
 
-    > Why? 因为这个确保你不会改变你的初始值，重复引用会导致bug和代码难以理解
+    > Why? 因为这可以确保您无法重新分配引用，重新分配引用可能会导致bug和代码难以理解
 
     ```javascript
     // bad
@@ -105,7 +105,7 @@
 
   <a name="2.2"></a>
   <a name="references--disallow-var"></a>
-  - [2.2](#references--disallow-var) 如果你一定要对参数重新赋值，那就用`let`，而不是`var`. eslint: [`no-var`](http://eslint.org/docs/rules/no-var.html)
+  - [2.2](#references--disallow-var) 如果你一定要重新分配引，那就用`let`，而不是`var`. eslint: [`no-var`](http://eslint.org/docs/rules/no-var.html)
 
     > Why? 因为`let`是块级作用域，而`var`是函数级作用域
 
@@ -137,7 +137,7 @@
     console.log(b); // ReferenceError
     ```
 
-**[⬆ back to top](#目录)**
+**[⬆ 回到顶部](#目录)**
 
 ## Objects
 
