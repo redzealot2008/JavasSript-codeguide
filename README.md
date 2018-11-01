@@ -5,7 +5,7 @@
   **注意**： 这个指南假定你正在使用 [Babel](https://babeljs.io/) ， 并且需要你使用或等效的使用 [babel-preset-airbnb](https://npmjs.com/babel-preset-airbnb) 。 同时假定你在你的应用里安装了带有或等效的 [airbnb-browser-shims](https://npmjs.com/airbnb-browser-shims) 的 shims/polyfills。
 
 ## 目录
-1. 类型
+1. [类型](#类型)
 2. 参考
 3. 对象
 4. 数组
@@ -45,7 +45,7 @@
 38. 执照
 39. 修订
 
-## Types
+## 类型
 
   <a name="1.1"></a>
   <a name="types--primitives"></a>
